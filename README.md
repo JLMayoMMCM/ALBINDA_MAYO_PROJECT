@@ -20,6 +20,7 @@ The project consists of several **.CS** files, each responsible for different fu
 - **Balance Check**: Verify the account balance with PIN validation.
 - **Bill Payment**: Pay bills using the available balance in the account.
 - **Change Pin**: Change the Account pin inside the console.
+- **Data Storage** Stores and updates data live.
 - **Pin Validation**: Includes security checks such as PIN validation and account lock after incorrect PIN attempts.
 
 ### INSTALLATION AND INITIALIZATION
