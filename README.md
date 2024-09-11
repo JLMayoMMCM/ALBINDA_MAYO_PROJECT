@@ -1,4 +1,4 @@
-# ALBINDA_MAYO_PROJECT
+# ALBINDA_MAYO_PROJECT_DEMO
 
 ### INTRODUCTION
 This project was created by **James Albert S. Albinda** and **Jonathan Lance S. Mayo** as a project for **IT102L W5**. The goal is to develop an **ATM console application** as a basic demonstration of **Object-Oriented Programming (OOP)** principles.
