@@ -10,6 +10,8 @@ namespace ALBINDA_MAYO_PROJECT
     internal class Account_Creation
     {
         private static int currentOption = 0;
+
+        //METHOD USED IN ACCOUNT CREATOR SCREEN NAVIGATION
         public static void CreatorScreen()
         {
             Console.Clear();
@@ -55,6 +57,8 @@ namespace ALBINDA_MAYO_PROJECT
                 }
             }
         }
+
+        //METHOD USED TO DISPLAY MENU
         public static void DisplayMenu()
         {
             if (currentOption == 0)
@@ -69,6 +73,7 @@ namespace ALBINDA_MAYO_PROJECT
             }
         }
 
+        //METHOD USED TO CREATE ACCOUNT
         public static void CreateAccount()
         {
             string LastName, FirstName, MiddleName, Address, City;
@@ -234,6 +239,7 @@ namespace ALBINDA_MAYO_PROJECT
             SaveAccountToFile(LastName, FirstName, MiddleName, Address, City, InitialDeposit, pin, isBankMember, islocked, accountNumber, debitCardNumber);
         }
 
+        //METHOD USED TO GET THE FULL NAME OF THE CLIENT
         public static string GetFullName(string LastName, string FirstName, string MiddleName)
         {
             if (MiddleName == "N/A" || MiddleName == "n/a")
@@ -245,6 +251,8 @@ namespace ALBINDA_MAYO_PROJECT
                 return $"{FirstName} {MiddleName} {LastName}";
             }
         }
+
+        //METHOD USED TO SAVE ACCOUNT TO FILE
         public static void SaveAccountToFile(string lastname, string firstname, string middlename, string address, string city, float initialDeposit, int pin, bool isBankMember, bool islocked, int accountNumber, int debitCardNumber)
         {
             string path = "files/clients.txt";

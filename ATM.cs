@@ -5,6 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
+
 namespace ALBINDA_MAYO_PROJECT
 {
     internal class ATM
@@ -21,6 +22,7 @@ namespace ALBINDA_MAYO_PROJECT
             User = user;
         }
 
+        //UI DISPLAY AFTER BALANCE CHECK
         public static void UpdateOptions(int selectedOption)
         {
             if (selectedOption == 1)
@@ -41,6 +43,7 @@ namespace ALBINDA_MAYO_PROJECT
             }
         }
 
+        //UI DISPLAY FOR MENU NAVIGATION
         public static void UpdateMenu(int selectedOption)
         {
             if (selectedOption == 1)
@@ -123,6 +126,7 @@ namespace ALBINDA_MAYO_PROJECT
             }
         }
 
+        //RECEIPT PRINTING FOR BALANCE
         public void PrintBalance()
         {
             Console.Clear();
@@ -136,6 +140,7 @@ namespace ALBINDA_MAYO_PROJECT
             Console.WriteLine("───────────────────────────────────────────────────────────────────────────────────");
         }
 
+        //RECEIPT PRINTING FOR WITHDRAWAL
         public void PrintWithdraw(float amount, float previousBalance)
         {
             Console.Clear();
@@ -151,6 +156,7 @@ namespace ALBINDA_MAYO_PROJECT
             Console.WriteLine("───────────────────────────────────────────────────────────────────────────────────");
         }
 
+        //RECEIPT PRINTING FOR DEPOSIT
         public void PrintDeposit(float amount, float previousBalance)
         {
             Console.Clear();
@@ -166,6 +172,7 @@ namespace ALBINDA_MAYO_PROJECT
             Console.WriteLine("───────────────────────────────────────────────────────────────────────────────────");
         }
 
+        //RECEIPT PRINTING FOR PAY BILLS
         public void PrintPayBills(float amount, int receiver)
         {
             Random rand = new Random();
@@ -184,6 +191,7 @@ namespace ALBINDA_MAYO_PROJECT
             Console.WriteLine("───────────────────────────────────────────────────────────────────────────────────");
         }
 
+        //UI DISPLAY FOR PRINTING RECEIPT NAVIGATION
         public void PrintDisplay(int option)
         {
             if (option == 1)
@@ -214,6 +222,8 @@ namespace ALBINDA_MAYO_PROJECT
                 Console.WriteLine("└─────────────────────────────────────────────────────────────────────────────────┘");
             }
         }
+        
+        //METHOD FOR CHECKING PIN INPUT
         public bool PinCheck()
         {
             int Attempts = 0;
@@ -250,6 +260,7 @@ namespace ALBINDA_MAYO_PROJECT
             return false;
         }
 
+        //METHOD FOR CHECKING IF ACCOUNT IS LOCKED
         public bool IsAccountLocked()
         {
             if (User.Account.lockCheck())
@@ -271,6 +282,7 @@ namespace ALBINDA_MAYO_PROJECT
             return false;
         }
 
+        //METHOD FOR CHECKING IF TRANSACTION FEE WILL APPLY FOR CURRENT USER
         public bool NonBankMemberTransactionFee()
         {
             if (!User.Account.BankMember)
@@ -313,6 +325,7 @@ namespace ALBINDA_MAYO_PROJECT
             return false;
         }
 
+        //METHOD FOR HIDING SENSITIVE INFO IN RECEIPT
         private string HideSensitiveInfo(string number)
         {
             if (number.Length > 4)
@@ -321,7 +334,8 @@ namespace ALBINDA_MAYO_PROJECT
             }
             return number;
         }
-        
+
+        //METHOD FOR NAVIGATING PRINT RECEIPT OPTIONS
         public bool PrintOptions()
         {
             bool printReceipt = false;
@@ -375,6 +389,7 @@ namespace ALBINDA_MAYO_PROJECT
             return printReceipt;
         }
 
+        //METHOD FOR CHECKING USER BALANCE
         public void CheckBalance()
         {
             if (IsAccountLocked()) return;
@@ -439,6 +454,8 @@ namespace ALBINDA_MAYO_PROJECT
             }
         }
 
+
+        //METHOD FOR WITHDRAWING MONEY
         public void Withdraw()
         {
             if (IsAccountLocked()) return;
@@ -505,6 +522,7 @@ namespace ALBINDA_MAYO_PROJECT
             }
         }
 
+        //METHOD FOR DEPOSITING MONEY
         public void Deposit()
         {
             if (IsAccountLocked()) return;
@@ -568,6 +586,7 @@ namespace ALBINDA_MAYO_PROJECT
             }
         }
 
+        //METHOD FOR PAYING BILLS
         public void PayBills()
         {
             if (IsAccountLocked()) return;
@@ -682,6 +701,7 @@ namespace ALBINDA_MAYO_PROJECT
             }
         }
 
+        //METHOD FOR CHANGING PIN
         public void ChangePin()
         {
             if (IsAccountLocked()) return;
@@ -739,6 +759,7 @@ namespace ALBINDA_MAYO_PROJECT
             }
         }
 
+        //METHOD FOR EJECTING CARD
         public void EjectCard()
         {
             Console.Clear();
@@ -749,6 +770,7 @@ namespace ALBINDA_MAYO_PROJECT
             ATM_INITIATION.InsertCardScreen();
         }
 
+        //METHOD FOR MENU SCREEN NAVIGATION
         public void MenuScreen()
         {
             int SelectedOption = 1;

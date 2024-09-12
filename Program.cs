@@ -9,7 +9,7 @@ namespace ALBINDA_MAYO_PROJECT
 {
     internal class Program
     {
-
+        //METHOD USED IN DISPLAYING THE LOGO
         public static void Logo()
         {
             Console.ForegroundColor = ConsoleColor.DarkBlue;
@@ -44,6 +44,8 @@ namespace ALBINDA_MAYO_PROJECT
             Console.WriteLine("           Property of Banco De Sentral Mindanao. All rights reserved.");
             Console.WriteLine("───────────────────────────────────────────────────────────────────────────────────");
         }
+
+        //METHOD USED IN PROGRAM NAVIGATION
         public void DisplayOptions()
         {
             int selectedOption = 1;
@@ -81,6 +83,8 @@ namespace ALBINDA_MAYO_PROJECT
                 }
             } while (navigationKey.Key != ConsoleKey.Enter);
         }
+
+        //METHOD USED IN DISPLAYING PROGRAM NAVIGATION
         public static void UpdateOptions(int selectedOption)
         {
             if (selectedOption == 1)
@@ -99,6 +103,7 @@ namespace ALBINDA_MAYO_PROJECT
             }
         }
 
+        //MAIN METHOD
         public static void Main(string[] args)
         {
             Console.CursorVisible = false;

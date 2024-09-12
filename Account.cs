@@ -21,7 +21,7 @@ namespace ALBINDA_MAYO_PROJECT
         public bool BankMember { get; set; }
 
 
-
+        //METHOD USED TO GENERATE RANDOM ACCOUNT NUMBER
         public static int GenerateAccountNumber()
         {
             Random random = new Random();
@@ -29,6 +29,7 @@ namespace ALBINDA_MAYO_PROJECT
             return randomNumber;
         }
 
+        //METHOD USED TO GENERATE RANDOM DEBIT CARD NUMBER
         public static int GenerateDebitCardNumber()
         {
             Random random = new Random();
@@ -36,7 +37,7 @@ namespace ALBINDA_MAYO_PROJECT
             return randomNumber;
         }
 
-
+        //CONSTRUCTOR FOR ACCOUNT CLASS WITH BASIC PARAMETERS
         public Account(float initialDeposit, int pin)
         {
             AccountNumber = GenerateAccountNumber();
@@ -47,16 +48,7 @@ namespace ALBINDA_MAYO_PROJECT
             BankMember = true;
         }
 
-        public Account(int accountNumber, int debitCardNumber, float balance, int pin, bool bankMember, bool islocked)
-        {
-            AccountNumber = accountNumber;
-            DebitCardNumber = debitCardNumber;
-            Balance = balance;
-            Pin = pin;
-            IsLocked = islocked;
-            BankMember = bankMember;
-        }
-
+        //CONSTRUCTOR FOR ACCOUNT CLASS WITH BASIC PARAMETERS
         public Account(int accountNumber, int debitCardNumber, float balance, int pin)
         {
             AccountNumber = accountNumber;
@@ -67,6 +59,20 @@ namespace ALBINDA_MAYO_PROJECT
             BankMember = true;
         }
 
+        //CONSTRUCTOR FOR ACCOUNT CLASS WITH ALL PARAMETERS
+        public Account(int accountNumber, int debitCardNumber, float balance, int pin, bool bankMember, bool islocked)
+        {
+            AccountNumber = accountNumber;
+            DebitCardNumber = debitCardNumber;
+            Balance = balance;
+            Pin = pin;
+            IsLocked = islocked;
+            BankMember = bankMember;
+        }
+
+
+
+        //METHOD USED TO CHECK IF THE PIN ENTERED IS CORRECT
         public bool pinCheck(int pin)
         {
             if (pin == Pin)
@@ -79,6 +85,7 @@ namespace ALBINDA_MAYO_PROJECT
             }
         }
 
+        //METHOD USED TO CHECK IF THE ACCOUNT IS LOCKED
         public bool lockCheck()
         {
             if (IsLocked == true)
@@ -91,6 +98,7 @@ namespace ALBINDA_MAYO_PROJECT
             }
         }
 
+        //METHOD USED TO LOCK AND UNLOCK THE ACCOUNT
         public void accountLock()
         {
             if (IsLocked == false)
@@ -107,6 +115,7 @@ namespace ALBINDA_MAYO_PROJECT
             }
         }
 
+        //METHOD USED TO CHECK THE BALANCE OF THE ACCOUNT
         public float checkBalance()
         {
             return Balance;
@@ -118,6 +127,7 @@ namespace ALBINDA_MAYO_PROJECT
             return Pin;
         }
 
+        //METHOD USED TO WITHDRAW MONEY FROM THE ACCOUNT
         public bool withdraw(float amount)
         {
             bool withdraw = true;
@@ -146,6 +156,7 @@ namespace ALBINDA_MAYO_PROJECT
             return withdraw;
         }
 
+        //METHOD USED TO DEPOSIT MONEY TO THE ACCOUNT
         public bool deposit(float amount)
         {
             if (amount <= 0)

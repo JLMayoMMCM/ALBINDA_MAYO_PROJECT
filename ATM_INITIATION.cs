@@ -12,6 +12,7 @@ namespace ALBINDA_MAYO_PROJECT
     {
         static List<CardHolder> Cards = new List<CardHolder>();
 
+        //MAIN METHOD IN INITIALIZING INSERT CARD SCREEN
         public static void InsertCardScreen()
         {
             Program.Logo();
@@ -49,6 +50,7 @@ namespace ALBINDA_MAYO_PROJECT
             }
         }
 
+        //METHOD USED TO UPDATE THE CLIENTS.TXT FILE
         public static void UpdateFile()
         {
             string path = "files/clients.txt";
@@ -63,6 +65,7 @@ namespace ALBINDA_MAYO_PROJECT
             }
         }
 
+        //METHOD USED TO IMPORT DATA FROM THE CLIENTS.TXT FILE
         public static void ImportData()
         {
             
