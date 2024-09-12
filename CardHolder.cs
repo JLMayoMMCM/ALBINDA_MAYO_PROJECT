@@ -48,17 +48,6 @@ namespace ALBINDA_MAYO_PROJECT
             Account = new Account(accountnumber, debitcardnumber, initialDeposit, pin, bankmember, islocked);
         }
 
-        // CONSTRUCTOR FOR CARDHOLDER CLASS WITH ONLY LAST NAME, FIRST NAME, ADDRESS, CITY, INITIAL DEPOSIT, AND PIN
-        public CardHolder(string lastName, string firstName, string address, string city, float initialDeposit, int pin)
-        {
-            LastName = lastName;
-            FirstName = firstName;
-            MiddleInitial = "";
-            Address = address;
-            City = city;
-            Account = new Account(initialDeposit, pin);
-        }
-
         // CONSTRUCTOR FOR CARDHOLDER CLASS WITH FULL NAME AS A SINGLE STRING
         public CardHolder(string fullName, string address, string city, float initialDeposit, int pin, bool bankmember, bool islocked, int accountnumber, int debitcardnumber)
         {

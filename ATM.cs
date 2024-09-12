@@ -10,7 +10,7 @@ namespace ALBINDA_MAYO_PROJECT
 {
     internal class ATM
     {
-        public CardHolder CurrentUser { get; private set; }
+
         public CardHolder User { get; set; }
         private int PinAttempts = 0;
 
